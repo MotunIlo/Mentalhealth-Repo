@@ -103,22 +103,24 @@ else:
         hist_list.append(user_word)
 
 #save the history of the texts
+data_hist = None
 with open('history.txt', 'a') as file:
         for item in hist_list:
             file.write(str(item) + '\n')
             file.write(response)    
-
-        import csv
-        files = 'history.txt' 
-        with open(files) as f:
-             reader = csv.reader(f)
-             data = list(reader)
-          
-
-
-
-history = pd.Series(data)
-st.sidebar.subheader('Chat History', divider = True)
+import csv
+files = 'history.txt'
+try:
+    with open(files, encoding='utf-8-sig') as f:
+        reader = csv.reader(f)
+        data_hist = list(reader)
+except UnicodeDecodeError:
+    with open(files, encoding='latin-1') as f:
+        reader = csv.reader(f)
+        data_hist = list(reader)
+        
+history = pd.DataFrame(data_hist)
+st.sidebar.subheader('Chat History', divider=True)
 st.sidebar.write(history)
 
 
