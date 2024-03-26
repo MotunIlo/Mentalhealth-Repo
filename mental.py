@@ -96,9 +96,9 @@ except UnicodeDecodeError:
 
 
 
-history = pd.DataFrame(data_hist)
-st.sidebar.subheader('Chat History', divider=True)
-st.sidebar.write(history)
+# history = pd.DataFrame(data_hist)
+# st.sidebar.subheader('Chat History', divider=True)
+# st.sidebar.write(history)
 
 st.header('Project Background Information', divider=True)
 st.write("In response to the increasing prevalence of mental health challenges, we have developed a compassionate chatbot named Mind Matters. This chatbot aims to provide accessible and personalized support for individuals navigating their mental well-being, offering a safe space to express feelings, access resources and receive guidance")
