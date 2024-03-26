@@ -85,19 +85,14 @@ else:
 
 data_hist = []
 
-import csv
-files = 'history.txt'
-try:
-    with open(files, 'r', encoding='utf-8-sig') as f:
-        data_hist = f.readlines()
-except UnicodeDecodeError:
-    with open(files, 'r', encoding='latin-1') as f:
-        data_hist = f.readlines()
+
+uploaded_file = st.file_uploader("Upload Chat History File", type=['txt'])
+if uploaded_file is not None:
+    content = uploaded_file.getvalue().decode("utf-8")
+    hist_list.extend(content.splitlines())
 
 
-
-
-history = pd.Series(data)
+history = pd.DataFrame(data_hist)
 st.sidebar.subheader('Chat History', divider=True)
 st.sidebar.write(history)
 
