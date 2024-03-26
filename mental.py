@@ -87,7 +87,7 @@ data_hist = None
 files = 'history.txt'
 try:
     with open(files, encoding='utf-8-sig') as f:
-        reader = csv.reader(f)
+        #reader = csv.reader(f)
         data_hist = list(reader)
 except UnicodeDecodeError:
     with open(files, encoding='latin-1') as f:
