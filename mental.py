@@ -9,6 +9,10 @@ warnings.filterwarnings('ignore')
 #import spacy
 lemmatizer = nltk.stem.WordNetLemmatizer()
 
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('wordnet')
+
 
 
 data = pd.read_csv('Mental_Health_FAQ.csv')
