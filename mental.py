@@ -97,7 +97,7 @@ except UnicodeDecodeError:
 
 
 
-history = pd.dataseries(data)
+history = pd.Series(data)
 st.sidebar.subheader('Chat History', divider=True)
 st.sidebar.write(history)
 
