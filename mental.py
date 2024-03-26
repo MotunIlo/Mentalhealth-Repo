@@ -100,7 +100,6 @@ elif user_word == '':
 else:   
         response = get_response(user_word)
         chat_response.write(f"\nChatbot: {response}")
-
         hist_list.append(user_word)
 
 #save the history of the texts
