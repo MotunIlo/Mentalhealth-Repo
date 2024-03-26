@@ -82,17 +82,17 @@ else:
     st.write(f"\nChatbot: {response}")
     hist_list.append(user_word)
 
-data_hist = None
+
+data_hist = []
 
 files = 'history.txt'
 try:
-    with open(files, encoding='utf-8-sig') as f:
-        #reader = csv.reader(f)
-        data_hist = list(reader)
+    with open(files, 'r', encoding='utf-8-sig') as f:
+        data_hist = f.readlines()
 except UnicodeDecodeError:
-    with open(files, encoding='latin-1') as f:
-        reader = csv.reader(f)
-        data_hist = list(reader)
+    with open(files, 'r', encoding='latin-1') as f:
+        data_hist = f.readlines()
+
 
 
 
