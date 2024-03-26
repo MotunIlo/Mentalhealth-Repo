@@ -83,10 +83,6 @@ else:
     hist_list.append(user_word)
 
 data_hist = None
-with open('history.txt', 'a') as file:
-    for item in hist_list:
-        file.write(str(item) + '\n')
-        file.write(response)
 
 files = 'history.txt'
 try:
@@ -97,6 +93,8 @@ except UnicodeDecodeError:
     with open(files, encoding='latin-1') as f:
         reader = csv.reader(f)
         data_hist = list(reader)
+
+
 
 history = pd.DataFrame(data_hist)
 st.sidebar.subheader('Chat History', divider=True)
