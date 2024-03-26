@@ -119,9 +119,9 @@ except UnicodeDecodeError:
         reader = csv.reader(f)
         data_hist = list(reader)
         
-history = pd.DataFrame(data_hist)
-st.sidebar.subheader('Chat History', divider=True)
-st.sidebar.write(history)
+# history = pd.DataFrame(data_hist)
+# st.sidebar.subheader('Chat History', divider=True)
+# st.sidebar.write(history)
 
 
 st.header('Project Background Information',divider = True)
